@@ -1,7 +1,7 @@
 /* TaskForm.css */
 .task-form {
     display: flex;
-    justify-content: space-between;
+    align-items: column;
     align-items: center;
     margin-bottom: 20px;
   }
@@ -15,12 +15,12 @@
     width: 90%;
     padding: 5px;
     font-size: 16px;
-    border: none; /* Elimina los bordes */
-  border-bottom: 1px solid #ccc; /* Agrega un borde inferior para resaltar el input */
-  outline: none; 
+    border: none; 
+    border-bottom: 1px solid #ccc; 
+    outline: none; 
   }
   .task-input::placeholder {
-    color: #ccc; /* Color gris claro para el placeholder */
+    color: #ccc; 
   }
   .add-button {
     background-color: #007BFF;
@@ -41,15 +41,19 @@
     /* Estilos para pantallas más pequeñas (por ejemplo, dispositivos móviles) */
     @media (max-width: 420px) {
         .task-form {
+            display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
+
         }
         .task-label {
-            width: 90%;
+            margin-top: 10px;
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
           }
           .add-button{
             margin-top: 10px;
           }
+
     }
   

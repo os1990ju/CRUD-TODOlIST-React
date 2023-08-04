@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import 'react-datepicker/dist/react-datepicker.css';
 import './TaskForm.css';
+import DatePicker from 'react-datepicker';
 const TaskForm = ({ onSubmit }) => {
   const [task, setTask] = useState({
     name: '',
     state: false,
-    expireAt: ''
+    expireAt: null
   });
 
   const handleChange = e => {
@@ -23,7 +25,6 @@ const TaskForm = ({ onSubmit }) => {
   return (
     <form onSubmit={handleSubmit} className='task-form'>
       <label className="task-label">
-        Nombre Tarea:
         <input 
         className="task-input"
         type="text" 
@@ -34,6 +35,17 @@ const TaskForm = ({ onSubmit }) => {
         placeholder="Ingrese su tarea aquí"/>
       </label>
       <label className="task-label">
+        <DatePicker
+          className="task-input"
+          name="expireAt"
+          selected={task.expireAt} // Utilizar selected en lugar de value para el DatePicker
+          onChange={(date) => setTask((prevTask) => ({ ...prevTask, expireAt: date }))}
+          required
+          dateFormat="dd/MM/yyyy" // Establecer el formato de fecha deseado
+          placeholderText="Seleccione fecha" // Establecer el placeholder personalizado para el DatePicker
+        />
+      </label>
+      {/* <label className="task-label">
         Fecha vencimiento:
         <input 
         className="task-input" 
@@ -42,7 +54,7 @@ const TaskForm = ({ onSubmit }) => {
         onChange={handleChange} 
         required
         />
-      </label>
+      </label> */}
       <button className='add-button'>Add Task</button>
     </form>
   );

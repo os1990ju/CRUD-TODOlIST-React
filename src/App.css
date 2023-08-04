@@ -6,16 +6,21 @@
         rgba(62, 161, 219, 1) 11.2%,
         rgba(93, 52, 236, 1) 100.2%
       );
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 100%; 
+      margin: 0 auto; /* Centra el contenedor horizontalmente */
+      padding: 20px; 
+      background-color: #f1f1f1; 
+      min-height: 100vh; 
+      overflow-y: auto; 
   }
   
   .container {
     margin: 20px 0px 20px 0px;
     width: 50%;
-    max-width: 800px;
+    max-width: 800px; 
     padding: 20px;
     border-radius: 25px;
     background-color: #fff;
